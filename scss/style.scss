@@ -1,0 +1,338 @@
+$headerfont: 'Montserrat', sans-serif;
+$mainfont: 'Poppins', sans-serif;
+
+$terracotta: #a81f24;
+$gold: #cba93f;
+$grey: #ebecef;
+$red: #ef4643;
+$darkgrey: #A4A4A4;
+
+@mixin for-size($size) {
+    @if $size == phone-only {
+      @media (max-width: 599px) { @content; }
+    }
+    @else if $size == tablet-portrait-up {
+      @media (min-width: 600px) { @content; }
+    }
+    @else if $size == tablet-landscape-up {
+      @media (min-width: 900px) { @content; }
+    }
+    @else if $size == laptop-up {
+      @media (min-width: 1200px) { @content; }
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header{
+    position: relative;
+    font-family: $headerfont;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include for-size(laptop-up){
+        justify-content: space-around;
+        position: fixed;
+        z-index: 5;
+    }
+    width: 100%;
+    height: 150px;
+    background-color: $grey;
+    
+
+}
+
+header img{
+    left: 50%;
+    top: 25px;
+    height: 100px;
+    width: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    z-index: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 1s;
+
+
+}
+
+a:hover{
+    transform: scale(1.7);
+}
+
+.menu{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: $red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:-5px 10px 30px 0px;
+    position: fixed;
+    right: 5%;
+    top: 37.5px;
+    z-index: 3;
+    @include for-size(laptop-up){
+        display: none;
+    }
+}
+
+
+.menu span{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.menu-inhoud {
+    display: none;
+    @include for-size(laptop-up){
+        width: 70%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+}
+
+.open{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50vh;
+    background-color: $gold;
+    color: $grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+}
+
+.section-1{
+    background-color: $terracotta;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $mainfont;
+    color: $grey;
+    @include for-size(laptop-up){
+        display: flex;
+        flex-direction: row;
+        height: 120vh;
+    }
+}
+
+.responsive{
+    width: 90%;
+    height: auto;
+    margin: 30px;
+    @include for-size(laptop-up){
+        width: 45%;
+    }
+}
+
+.wie{
+    width: 90%;
+    height: 80vh;
+    @include for-size(tablet-landscape-up){
+        height: 40vh;
+        width: 60%;
+    }
+
+    @include for-size(laptop-up){
+        width: 45%;
+    }
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wie h1{
+    font-size: 3rem;
+
+}
+
+
+
+.section-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $gold;
+    font-family: $mainfont;
+
+}
+
+.section-2 span{
+    margin-top: 20px;
+    font-size: 3rem;
+    color: $grey;
+    font-weight: bold;
+    @include for-size(laptop-up){
+        margin-top: 200px;
+    }
+}
+
+.show{
+    width: 80%;
+    height: 20%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow:-5px 10px 30px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include for-size(laptop-up){
+        width: 45%;
+        height: 40%;
+    }
+
+}
+
+.shows{
+    height: 200vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    @include for-size(laptop-up){
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+}
+
+.y2019{
+    background-image: url("../img/2019\ krantenkoppen.jpg");
+}
+
+.y2018{
+    background-image: url("../img/2018\ Taylor.jpg");
+}
+
+.y2017{
+    background-image: url("../img/2017\ rythm\ of\ life.jpg");
+}
+
+.y2016{
+    background-image: url("../img/2016\ viva\ la\ vida.jpg");
+}
+
+.show-txt{
+    width: 80%;
+    height: 80%;
+    background-color: rgba($color: #fff, $alpha: 0.4);
+    font-family: $headerfont;
+    color: $terracotta;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.show-txt h1{
+    font-size: 2.5rem;
+}
+
+.show-txt p{
+    color: $terracotta;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.section-3{
+    background-color: $terracotta;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    @include for-size(laptop-up){
+        flex-direction: row;
+    }
+
+}
+
+.cast, .crew{
+    width: 80%;
+    height: 30%;
+    font-family: $mainfont;
+    color: $grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    @include for-size(laptop-up){
+        width: 40%;
+        height: 70%;
+        justify-content: center;
+    }
+}
+
+.fawesome a{
+    font-size: 4.5rem;
+    color: $grey;
+}
+
+
+.section-4{
+    background-color: $gold;
+    height: 100vh;
+    width: 100%;
+    font-family: $mainfont;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $terracotta;
+}
+
+.contact-txt{
+    width: 80%;
+    margin-bottom: 20vh;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.contact-links{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-links a{
+    color: $terracotta;
+}
+
+footer{
+    height: 10vh;
+    margin: 0 auto;
+    background: black;
+    color: $darkgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $headerfont;
+}
+
